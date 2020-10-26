@@ -1,0 +1,28 @@
+{
+  "calendarData": [
+    {"date":"2020-11-01","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-02","booking":{"red": 1, "orange": 1, "green": 1}},
+    {"date":"2020-11-03","booking":{"red": 0, "orange": 3, "green": 0}},
+    {"date":"2020-11-04","booking":{"red": 0, "orange": 2, "green": 1}},
+    {"date":"2020-11-05","booking":{"red": 0, "orange": 1, "green": 1}},
+    {"date":"2020-11-06","booking":{"red": 0, "orange": 1, "green": 0}},
+    {"date":"2020-11-07","booking":{"red": 0, "orange": 1, "green": 3}},
+    {"date":"2020-11-08","booking":{"red": 2, "orange": 1, "green": 0}},
+    {"date":"2020-11-09","booking":{"red": 1, "orange": 1, "green": 1}},
+    {"date":"2020-11-10","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-11","booking":{"red": 1, "orange": 0, "green": 2}},
+    {"date":"2020-11-12","booking":{"red": 1, "orange": 0, "green": 2}},
+    {"date":"2020-11-13","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-14","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-15","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-16","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-17","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-18","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-19","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-20","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-21","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-22","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-23","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-11-24","booking":{"red": 0, "orange": 1, "green": 2}}
+  ]
+}

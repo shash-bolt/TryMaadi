@@ -1,0 +1,760 @@
+{
+  "products": [
+    {
+      "category": "A",
+      "categoryDesc": "This is category A. Dealing with A items",
+      "subcategory": [
+        {
+          "scName": "A1",
+          "scItems": [
+            {
+              "itemName": "A1I1",
+              "itemDescription": "A1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "A1I2",
+              "itemDescription": "A1I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "A1I3",
+              "itemDescription": "A1I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "A1I1",
+              "itemDescription": "A1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "A2",
+          "scItems": [
+            {
+              "itemName": "A2I1",
+              "itemDescription": "A2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "A2I2",
+              "itemDescription": "A2I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "A2I3",
+              "itemDescription": "A2I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "A2I1",
+              "itemDescription": "A2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "A3",
+          "scItems": [
+            {
+              "itemName": "A3I1",
+              "itemDescription": "A3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "A3I2",
+              "itemDescription": "A3I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "A3I3",
+              "itemDescription": "A3I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "A3I1",
+              "itemDescription": "A3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "B",
+      "categoryDesc": "This is category A. Dealing with A items",
+      "subcategory": [
+        {
+          "scName": "B1",
+          "scItems": [
+            {
+              "itemName": "B1I1",
+              "itemDescription": "B1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "B1I2",
+              "itemDescription": "B1I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "B1I3",
+              "itemDescription": "B1I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "B1I1",
+              "itemDescription": "B1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "B2",
+          "scItems": [
+            {
+              "itemName": "B2I1",
+              "itemDescription": "B2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "B2I2",
+              "itemDescription": "B2I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "B2I3",
+              "itemDescription": "B2I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "B2I1",
+              "itemDescription": "B2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "B3",
+          "scItems": [
+            {
+              "itemName": "B3I1",
+              "itemDescription": "B3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "B3I2",
+              "itemDescription": "B3I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "B3I3",
+              "itemDescription": "B3I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "B3I1",
+              "itemDescription": "B3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "C",
+      "categoryDesc": "This is category A. Dealing with A items",
+      "subcategory": [
+        {
+          "scName": "C1",
+          "scItems": [
+            {
+              "itemName": "C1I1",
+              "itemDescription": "C1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "C1I2",
+              "itemDescription": "C1I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "C1I3",
+              "itemDescription": "C1I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "C1I1",
+              "itemDescription": "C1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "C2",
+          "scItems": [
+            {
+              "itemName": "C2I1",
+              "itemDescription": "C2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "C2I2",
+              "itemDescription": "C2I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "C2I3",
+              "itemDescription": "C2I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "C2I1",
+              "itemDescription": "C2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "C3",
+          "scItems": [
+            {
+              "itemName": "C3I1",
+              "itemDescription": "C3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "C3I2",
+              "itemDescription": "C3I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "C3I3",
+              "itemDescription": "C3I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "C3I1",
+              "itemDescription": "C3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "D",
+      "categoryDesc": "This is category A. Dealing with A items",
+      "subcategory": [
+        {
+          "scName": "D1",
+          "scItems": [
+            {
+              "itemName": "D1I1",
+              "itemDescription": "D1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "D1I2",
+              "itemDescription": "D1I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "D1I3",
+              "itemDescription": "D1I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "D1I1",
+              "itemDescription": "D1I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "D2",
+          "scItems": [
+            {
+              "itemName": "D2I1",
+              "itemDescription": "D2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "D2I2",
+              "itemDescription": "D2I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "D2I3",
+              "itemDescription": "D2I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "D2I1",
+              "itemDescription": "D2I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        },
+        {
+          "scName": "D3",
+          "scItems": [
+            {
+              "itemName": "D3I1",
+              "itemDescription": "D3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "D3I2",
+              "itemDescription": "D3I2 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 1,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": 50,
+                "monthly": 200
+              }
+            },
+            {
+              "itemName": "D3I3",
+              "itemDescription": "D3I3 item description",
+              "itemAvailability": {
+                "red": 1,
+                "yellow": 0,
+                "green": 0
+              },
+              "itemCost": {
+                "daily": 400,
+                "weekly": -1,
+                "monthly": -1
+              }
+            },
+            {
+              "itemName": "D3I1",
+              "itemDescription": "D3I1 item description",
+              "itemAvailability": {
+                "red": 0,
+                "yellow": 0,
+                "green": 1
+              },
+              "itemCost": {
+                "daily": -1,
+                "weekly": -1,
+                "monthly": 200
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
