@@ -12,8 +12,19 @@ export default StyleSheet.create({
     backgroundColor: 'green'
   },
   ProductContainer:{
-    height: screenHeight*0.9,
-    //backgroundColor: 'yellow'
+    height: screenHeight*0.8,
+    backgroundColor: 'yellow',
+    alignItems: "center"
+  },
+  CartItemContainer:{
+    width: screenWidth*0.95,
+    backgroundColor: 'white',
+    height: screenHeight*0.25,
+    marginVertical: 5,
+  },
+  CartItemTitle:{
+    fontSize: 18,
+      fontWeight: "bold",   
   },
   BottomContainer:{    
     height: screenHeight*0.1,
@@ -50,7 +61,8 @@ export default StyleSheet.create({
   AddCartContainer:{
     height: screenHeight*0.1,
     backgroundColor: 'white',
-    alignItems:"center"
+    alignItems:"center",
+    
   },
   buttonContainer: {
     padding: 10,

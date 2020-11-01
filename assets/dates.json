@@ -1,5 +1,14 @@
 {
   "calendarData": [
+    {"date":"2020-10-23","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-24","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-25","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-26","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-27","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-28","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-29","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-30","booking":{"red": 0, "orange": 1, "green": 2}},
+    {"date":"2020-10-31","booking":{"red": 0, "orange": 1, "green": 2}},
     {"date":"2020-11-01","booking":{"red": 0, "orange": 1, "green": 2}},
     {"date":"2020-11-02","booking":{"red": 1, "orange": 1, "green": 1}},
     {"date":"2020-11-03","booking":{"red": 0, "orange": 3, "green": 0}},
