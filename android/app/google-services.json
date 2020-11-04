@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "916473773093",
+    "firebase_url": "https://test-trymaadi-v01.firebaseio.com",
+    "project_id": "test-trymaadi-v01",
+    "storage_bucket": "test-trymaadi-v01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916473773093:android:5ceb013fb015a0a3f313cc",
+        "android_client_info": {
+          "package_name": "com.trymaadi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916473773093-bcje9544jn8r19ar24jvkcq3752eoemo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0PPJFN8mMZfvU1nTvPeRudrLNB0ZOIRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916473773093-bcje9544jn8r19ar24jvkcq3752eoemo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
