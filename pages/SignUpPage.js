@@ -9,28 +9,46 @@ import {
   StatusBar,
   ScrollView,
   Image,
-  Button
+  Button,
 } from 'react-native';
 
-import CartItemComp from '../components/CartItemComp';
+import auth from '@react-native-firebase/auth';
 
 import styles from '../styles/SignUpPageStyle';
 
-export default function WelcomeComp() {
+export default function WelcomeComp({navigation}) {
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const [displayName,setDisplayName] = useState('');
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
-  const [isLoading,setisLoading] = useState(false); 
+  function registerUser() {
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((res) => {
+        res.user.updateProfile({
+          displayName: displayName,
+        });
+        alert('User registered successfully!');
+        console.log(res);
+        console.log('========================================================')
+        setDisplayName('');
+        setEmail('');
+        setPassword('');
+        navigation.navigate('Login');
+      })
+      .catch((error) => {
+        alert(error.message)     
+      });
+  }
 
   return (
-    <View style={styles.container}>  
+    <View style={styles.container}>
       <TextInput
         style={styles.inputStyle}
         placeholder="Name"
         value={displayName}
         onChangeText={(val) => setDisplayName(val)}
-      />      
+      />
       <TextInput
         style={styles.inputStyle}
         placeholder="Email"
@@ -44,19 +62,18 @@ export default function WelcomeComp() {
         onChangeText={(val) => setPassword(val)}
         maxLength={15}
         secureTextEntry={true}
-      />   
+      />
       <Button
         color="#3740FE"
         title="Sign up with us"
-        //onPress={() => this.registerUser()}
+        onPress={() => registerUser()}
       />
 
-      <Text 
+      <Text
         style={styles.loginText}
-        //onPress={() => this.props.navigation.navigate('Login')}>
-        >
+        onPress={() => navigation.navigate('Login')}>
         Already Registered? Click here to login
-      </Text>                          
+      </Text>
     </View>
   );
 }

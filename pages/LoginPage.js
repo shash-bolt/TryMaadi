@@ -9,22 +9,31 @@ import {
   StatusBar,
   ScrollView,
   Image,
-  Button
+  Button,
 } from 'react-native';
-
-import CartItemComp from '../components/CartItemComp';
+import auth from '@react-native-firebase/auth';
 
 import styles from '../styles/LoginPageStyle';
 
-export default function WelcomeComp({ navigation }) {
+export default function WelcomeComp({navigation}) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const [displayName,setDisplayName] = useState('');
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
-  const [isLoading,setisLoading] = useState(false);
+  function userLogin() {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        console.log(res);
+        console.log('User logged-in successfully!');
+        setEmail('');
+        setPassword('');
+        navigation.navigate('Front');
+      })
+      .catch((error) => alert(error.message));
+  }
 
   return (
-    <View style={styles.container}>  
+    <View style={styles.container}>
       <TextInput
         style={styles.inputStyle}
         placeholder="Email"
@@ -38,31 +47,21 @@ export default function WelcomeComp({ navigation }) {
         onChangeText={(val) => setPassword(val)}
         maxLength={15}
         secureTextEntry={true}
-      />   
-      <Button
-        color="#3740FE"
-        title="Sign in"
-       // onPress={() => this.userLogin()}
-      />   
+      />
+      <Button color="#3740FE" title="Sign in" onPress={() => userLogin()} />
 
-      <Text 
+      <Text
         style={styles.loginText}
-        onPress={() => navigation.navigate('SignUp')}
-        >
+        onPress={() => navigation.navigate('SignUp')}>
         Don't have account? Click here to signup
-      </Text>               
+      </Text>
 
-      <Text 
-        style={styles.loginText}        
-        >
-        Forgot Password ?
-      </Text>   
-      <Text 
+      <Text style={styles.loginText}>Forgot Password ?</Text>
+      <Text
         style={styles.loginText}
-        onPress={() => navigation.navigate('Front')}        
-        >
+        onPress={() => navigation.navigate('Front')}>
         Continue as Guest..
-      </Text>            
+      </Text>
     </View>
   );
 }

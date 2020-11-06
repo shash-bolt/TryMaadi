@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text, TextInput, FlatList} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 import styles from '../styles/FrontPageStyle';
 
@@ -11,6 +12,12 @@ export default function WelcomeComp() {
   const [category2, setCategory2] = useState('');
 
   useEffect(() => {
+    var user = auth().currentUser;
+    if (user){
+      console.log('User is: '+JSON.stringify(user))
+    }
+  // User is signed in.
+ 
     setProducts(updateProducts());
     console.log('useEffect');
   }, []);
