@@ -1,79 +1,80 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
+import auth from '@react-native-firebase/auth';
+import {CrossContext} from '../components/ContextComp';
 
 import styles from '../styles/ProfilePageStyle';
 
-export default function WelcomeComp() {
+export default function ProfilePageFn({navigation}) {
+  const GlobalState = useContext(CrossContext);
+  const {dispatch} = GlobalState;
+  
+  const [email, setEmail] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [memberSince, setMemberSince] = useState('');
+
+  useEffect(() => {
+    let user = auth().currentUser;
+    if (user) {
+      setEmail(user.email);
+      setDisplayName(user.displayName);
+      setMemberSince(new Date(user.metadata.creationTime).toDateString());
+    }
+  }, []);
+
+  function signOut() {
+    auth()
+      .signOut()
+      .then(() => {        
+        dispatch({type: 'userLoggedOut'});
+      })
+      .then(navigation.navigate('Front'));
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerContent}>
-          <Image
-            style={styles.avatar}
-            source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}
-          />
-
-          <Text style={styles.name}>John Doe </Text>
-          <Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
-          <Text style={styles.userInfo}>Florida </Text>
+          <Text style={styles.name}>{displayName}</Text>
+          <Text style={styles.userInfo}>{email} </Text>
+          <Text style={styles.userInfo}>Member since {memberSince} </Text>
         </View>
       </View>
 
       <View style={styles.body}>
         <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <Image
-              style={styles.icon}
-              source={{
-                uri: 'https://img.icons8.com/color/70/000000/cottage.png',
-              }}
-            />
-          </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>Home</Text>
+            <Text style={styles.info}>Edit Addresses</Text>
           </View>
         </View>
 
         <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <Image
-              style={styles.icon}
-              source={{
-                uri:
-                  'https://img.icons8.com/color/70/000000/administrator-male.png',
-              }}
-            />
-          </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>Settings</Text>
+            <Text style={styles.info}>Edit name</Text>
           </View>
         </View>
 
         <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <Image
-              style={styles.icon}
-              source={{
-                uri: 'https://img.icons8.com/color/70/000000/filled-like.png',
-              }}
-            />
-          </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>News</Text>
+            <Text style={styles.info}>Current Orders</Text>
           </View>
         </View>
 
         <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <Image
-              style={styles.icon}
-              source={{
-                uri: 'https://img.icons8.com/color/70/000000/facebook-like.png',
-              }}
-            />
-          </View>
           <View style={styles.infoContent}>
-            <Text style={styles.info}>Shop</Text>
+            <Text style={styles.info}>Past Orders</Text>
+          </View>
+        </View>
+
+        <View style={styles.item}>
+          <View style={styles.infoContent}>
+            <Text
+              style={styles.info}
+              onPress={() => {
+                signOut();
+              }}>
+              Log Out
+            </Text>
           </View>
         </View>
       </View>

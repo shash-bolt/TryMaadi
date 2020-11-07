@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -12,24 +12,24 @@ import {
   Button,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {CrossContext} from '../components/ContextComp';
 
 import styles from '../styles/LoginPageStyle';
 
 export default function WelcomeComp({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const GlobalState = useContext(CrossContext);
+  const {dispatch} = GlobalState;
 
   function userLogin() {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log(res);
-        console.log('User logged-in successfully!');
-        setEmail('');
-        setPassword('');
+        dispatch({type: 'userLoggedIn'});        
         navigation.navigate('Front');
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => console.log(error));
   }
 
   return (

@@ -6,20 +6,13 @@ import styles from '../styles/FrontPageStyle';
 
 import ListItemComp from '../components/ListItemComp';
 
-export default function WelcomeComp() {
+export default function FrontPageFn() {
   const [products, setProducts] = useState();
   const [category1, setCategory1] = useState('');
   const [category2, setCategory2] = useState('');
 
   useEffect(() => {
-    var user = auth().currentUser;
-    if (user){
-      console.log('User is: '+JSON.stringify(user))
-    }
-  // User is signed in.
- 
-    setProducts(updateProducts());
-    console.log('useEffect');
+    setProducts(updateProducts());    
   }, []);
 
   const currProd = require('../assets/products.json');
@@ -104,10 +97,9 @@ export default function WelcomeComp() {
 
   function handleModal(item) {
     console.log('Button pressed');
-    console.log(JSON.stringify(item));
-    
+    console.log(JSON.stringify(item));    
   }
-
+  
   return (
     <View style={styles.container}>
       <View style={styles.category1container}>
