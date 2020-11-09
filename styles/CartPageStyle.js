@@ -80,4 +80,8 @@ export default StyleSheet.create({
     fontSize: 17,
     fontFamily: 'sans-serif',
   },
+  CartRow:{
+    justifyContent: "space-between",
+    flexDirection: "row" 
+  }
 });

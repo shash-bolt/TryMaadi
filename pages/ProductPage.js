@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -12,14 +12,15 @@ import {
   ToastAndroid,
 } from 'react-native';
 
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import {CalendarList} from 'react-native-calendars';
 import {Picker} from '@react-native-community/picker';
+import {CrossContext} from '../components/ContextComp';
 
 import styles from '../styles/ProductPageStyle';
 
-export default function WelcomeComp() {
+export default function ProductPageFn({route, navigation}) {
   const [calendarData, setCalendarData] = useState('{}');
-  const [noOfUnits, setNoOfUnits] = useState(2); 
+  const [noOfUnits, setNoOfUnits] = useState(2);
   const [startDay, setStartDay] = useState('');
   const [endDay, setEndDay] = useState('');
   const [startEndToggle, setStartEndToggle] = useState(true); // true = start, false = end;
@@ -27,10 +28,13 @@ export default function WelcomeComp() {
   const [bookingPossible, setBookingPossible] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
 
+  const GlobalState = useContext(CrossContext);
+  const {dispatch} = GlobalState;
+
   useEffect(() => {
     let currDate = new Date();
-    var date = currDate.getDate(); //Current Date
-    var month = currDate.getMonth() + 1; //Current Month
+    var date = ('0' + currDate.getDate()).slice(-2); //Current Date
+    var month = ('0' + (currDate.getMonth() + 1)).slice(-2); //Current Month
     var year = currDate.getFullYear(); //Current Year
     setMinDate(year + '-' + month + '-' + date);
     setStartDay(year + '-' + month + '-' + date);
@@ -39,20 +43,20 @@ export default function WelcomeComp() {
 
   useEffect(() => {
     markDates();
+    //console.log(calendarData);
     setTotalCost(costCalculator());
-  }, [startEndToggle,noOfUnits]);
+  }, [startEndToggle, noOfUnits]);
 
   const currProduct = {
-    itemPic: 'https://picsum.photos/200',
-    itemName: 'Sony PlayStation 5',
-    itemID: 101090,
-    itemDescription:
-      'The PS5 is an upcoming next-gen gaming console from Sony. The system will formally be called the Sony PlayStation 5, or PS5 for short. Every prior iteration has adopted that naming scheme, so it’s not a real surprise.\n\nThe Sony PlayStation 5 is a massive jump forward from its predecessor, offering more powerful specs and a space-age design. Its main competitors will be the upcoming Xbox Series X and the Nintendo Switch. The latter of these consoles released in 2017 and while a great system, isn’t necessarily a direct competitor.\n',
-    maxitemAvailable: 4,
-    itemCost: {daily: 400, weekly: 2000, monthly: 7000},
+    itemPic: 'https://picsum.photos/200', // Needs to be added to the json file
+    itemName: route.params.itemName,
+    itemID: 101090, // Needs to be added to the json file
+    itemDescription: route.params.itemDescription,
+    maxitemAvailable: 4, // Needs to be added to the json file
+    itemCost: route.params.itemCost,
   };
 
-  const dateArr = require('../assets/dates.json');
+  const dateArr = require('../assets/dates.json'); // The json file
 
   function markDates() {
     let current = {
@@ -95,9 +99,12 @@ export default function WelcomeComp() {
       color: 'lightblue',
     };
     var bookingPossibleCode = 0;
+    //console.log(new Date(minDate)+'--->'+new Date(minDate).getTime())
     if (startDay === endDay) {
       for (var i = 0; i < dateArr.calendarData.length; i++) {
+        //console.log(new Date(dateArr.calendarData[i].date) +'---'+ new Date(dateArr.calendarData[i].date).getTime())
         if (new Date(dateArr.calendarData[i].date) < new Date(minDate)) {
+          //console.log('Here');
           result[dateArr.calendarData[i].date] = disabledStatus;
           continue;
         }
@@ -223,7 +230,7 @@ export default function WelcomeComp() {
       totalSum = Math.ceil((numDays * currProduct.itemCost.monthly) / 30);
     }
 
-    return totalSum*noOfUnits;
+    return totalSum * noOfUnits;
   }
 
   function addToCart() {
@@ -246,17 +253,23 @@ export default function WelcomeComp() {
       timeBooked: new Date(),
       productCost: totalCost,
       noOfUnits: noOfUnits,
-      active:true
+      active: true,
     };
-
     console.log(bookingParams);
+    dispatch({type: 'addToCart',
+    payload: {
+      item:bookingParams
+  }
+  });
   }
 
-  function pickers(){
+  function pickers() {
     {
       var pickerValues = [];
       for (var i = 1; i <= currProduct.maxitemAvailable; i++) {
-        pickerValues.push(<Picker.Item label={i.toString()} value={i} key={i} />);
+        pickerValues.push(
+          <Picker.Item label={i.toString()} value={i} key={i} />,
+        );
       }
       return pickerValues;
     }
@@ -273,9 +286,7 @@ export default function WelcomeComp() {
           />
           <Text style={styles.ProductTitle}>{currProduct.itemName}</Text>
           <Text style={styles.ProductDesc}>{currProduct.itemDescription}</Text>
-          <Text style={styles.InfoDateSet}>
-            No. of units:            
-          </Text>          
+          <Text style={styles.InfoDateSet}>No. of units:</Text>
           <Picker
             selectedValue={noOfUnits}
             //style={{height: 50, width: 100}}
@@ -283,9 +294,7 @@ export default function WelcomeComp() {
             {pickers()}
           </Picker>
           <Text style={styles.InfoDateSet}>
-            No. of units: 
-            Info:{' '}
-            {startEndToggle ? 'Set the Start Date' : 'Set the End Date'}
+            Info: {startEndToggle ? 'Set the Start Date' : 'Set the End Date'}
           </Text>
           <Text style={styles.DatesSetStyle}>
             Dates set: {startDay} to {endDay}
@@ -297,6 +306,7 @@ export default function WelcomeComp() {
             horizontal={true}
             markedDates={JSON.parse(calendarData)}
             onDayPress={(day) => {
+              console.log(day);
               if (startEndToggle) {
                 setStartDay(day.dateString);
                 setStartEndToggle(false);
@@ -304,6 +314,9 @@ export default function WelcomeComp() {
                 setEndDay(day.dateString);
                 setStartEndToggle(true);
               }
+            }}
+            onDayLongPress={(day) => {
+              console.log('Long Press');
             }}
             markingType={'period'}
             minDate={minDate}
@@ -317,26 +330,32 @@ export default function WelcomeComp() {
             <TouchableOpacity
               style={styles.buttonContainer}
               onPress={() => {
-                if (bookingPossible == 0) {
-                  ToastAndroid.show(
-                    'Product added to Cart. Rent it within 5 minutes..!!.',
-                    ToastAndroid.LONG,
-                  );
-                  addToCart();
-                } else if (bookingPossible == 1) {
-                  ToastAndroid.show(
-                    'Others are renting this product. Try again in 2 minutes.',
-                    ToastAndroid.LONG,
-                  );
-                } else if (bookingPossible == 2) {
-                  ToastAndroid.show(
-                    'This product is not available for the selected dates.',
-                    ToastAndroid.LONG,
-                  );
+                if (GlobalState.state.isLoggedIn) {
+                  if (bookingPossible == 0) {
+                    ToastAndroid.show(
+                      'Product added to Cart. Rent it within 5 minutes..!!.',
+                      ToastAndroid.LONG,
+                    );
+                    addToCart();
+                  } else if (bookingPossible == 1) {
+                    ToastAndroid.show(
+                      'Others are renting this product. Try again in 2 minutes.',
+                      ToastAndroid.LONG,
+                    );
+                  } else if (bookingPossible == 2) {
+                    ToastAndroid.show(
+                      'This product is not available for the selected dates.',
+                      ToastAndroid.LONG,
+                    );
+                  }
+                }else{
+                  navigation.navigate("Login");
                 }
               }}
-              disabled={totalCost == 0}>
-              <Text style={styles.buttonContainerText}>Add to Cart</Text>
+              disabled={totalCost == 0 && GlobalState.state.isLoggedIn}>
+              <Text style={styles.buttonContainerText}>
+                {GlobalState.state.isLoggedIn ? 'Add to Cart' : 'Login to Rent'}
+              </Text>
             </TouchableOpacity>
           </View>
         </ScrollView>

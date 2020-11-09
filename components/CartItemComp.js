@@ -89,7 +89,12 @@ export default function IngredientListItemComp(props) {
               <Text style={styles.LITitle}>Product removed</Text>
             )}
             <View style={styles.optionContainer}>
-              <TouchableOpacity style={styles.cartOptionBox}>
+              <TouchableOpacity 
+                style={styles.cartOptionBox}
+                onPress={() => {
+                  props.deleteItem();
+                }}  
+              >
                 <Text>Delete</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.cartOptionBox}>

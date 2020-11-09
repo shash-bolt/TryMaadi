@@ -6,7 +6,7 @@ import styles from '../styles/FrontPageStyle';
 
 import ListItemComp from '../components/ListItemComp';
 
-export default function FrontPageFn() {
+export default function FrontPageFn({navigation}) {
   const [products, setProducts] = useState();
   const [category1, setCategory1] = useState('');
   const [category2, setCategory2] = useState('');
@@ -96,10 +96,11 @@ export default function FrontPageFn() {
   }
 
   function handleModal(item) {
-    console.log('Button pressed');
-    console.log(JSON.stringify(item));    
+    //console.log('Button pressed');
+    console.log(JSON.stringify(item));
+    navigation.navigate('Product',item);
   }
-  
+
   return (
     <View style={styles.container}>
       <View style={styles.category1container}>

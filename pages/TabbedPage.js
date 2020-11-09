@@ -14,7 +14,6 @@ import ProfilePage from './ProfilePage';
 import SignUpPage from './SignUpPage';
 import LoginPage from './LoginPage';
 import AboutUsPage from './AboutUsPage';
-import AddAddressPage from './AddAddressPage';
 
 export default function WelcomeComp() {
  
@@ -46,8 +45,7 @@ export default function WelcomeComp() {
   function ProfileStackScreen() {
     return (
       <ProfileStack.Navigator headerMode={false}>
-        <ProfileStack.Screen name="Profile" component={ProfilePage} />
-        <ProfileStack.Screen name="AddAddress" component={AddAddressPage} />
+        <ProfileStack.Screen name="Profile" component={ProfilePage} />       
       </ProfileStack.Navigator>
     );
   }
