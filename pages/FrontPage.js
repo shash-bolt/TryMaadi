@@ -15,7 +15,7 @@ export default function FrontPageFn({navigation}) {
     setProducts(updateProducts());    
   }, []);
 
-  const currProd = require('../assets/products.json');
+  //const currProd = require('../assets/products.json');
 
   function updateProducts() {
     //get data from firebase
@@ -86,12 +86,12 @@ export default function FrontPageFn({navigation}) {
     });
     let index2 = -1;
     if (index > -1) {
-      index2 = currProd.products[index].subcategory.findIndex((val) => {
+      index2 = products.products[index].subcategory.findIndex((val) => {
         return val.scName === category2;
       });
     }
     if (index2 > -1) {
-      return currProd.products[index].subcategory[index2].scItems;
+      return products.products[index].subcategory[index2].scItems;
     }
   }
 

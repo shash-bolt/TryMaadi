@@ -56,5 +56,25 @@ export default StyleSheet.create({
     fontSize:18,
     marginTop:20,
     color: "#FFFFFF",
+  },
+  CartItemContainer:{
+    width: screenWidth*0.95,
+    backgroundColor: 'white',
+    height: screenHeight*0.25,
+    marginVertical: 5,    
+  },
+  CartItemTitle:{
+    fontSize: 18,
+      fontWeight: "bold",   
+  },
+  CartRow:{
+    justifyContent: "space-between",
+    flexDirection: "row" 
+  },
+  addressModalContainer:{
+    width: screenWidth,
+    height: screenHeight,
+    justifyContent: "center",
+    alignItems: "center",
   }
 });

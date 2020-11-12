@@ -38,8 +38,10 @@ export default function WelcomeComp({navigation}) {
   const [rentalItemsJSX, setRentalItemsJSX] = useState();
   const [currAddresses, setCurrAddresses] = useState(new Array());
   const [AddressesJSX, setAddressesJSX] = useState();
-  const [addressDelta, setAddressDelta] = useState(true);
+  const [addressDisplayDelta, setAddressDisplayDelta] = useState(true);
   const [addressModal, setAddressModal] = useState(false);
+  const [selectedAddress, setSelectedAddress] = useState();
+  const [selectedAddressIndex, setSelectedAddressIndex] = useState(0);
 
   const GlobalState = useContext(CrossContext);
   const {dispatch} = GlobalState;
@@ -61,7 +63,7 @@ export default function WelcomeComp({navigation}) {
 
   useEffect(() => {
     displayAddresses();
-  }, [addressDelta]);
+  }, [addressDisplayDelta,selectedAddress]);
 
   function transportFeeCalculator() {
     // May need to download data from dB for prior orders.
@@ -124,9 +126,11 @@ export default function WelcomeComp({navigation}) {
     navigation.navigate('Front');
   }
 
-  function selectAddress(item) {
-    console.log('Button pressed');
-    console.log(JSON.stringify(item));
+  function selectAddress(item, index) {
+    //console.log('Button pressed');
+    setSelectedAddress(item);
+    setSelectedAddressIndex(index);
+    //console.log(JSON.stringify(item));
   }
 
   function timerOver(index) {
@@ -177,7 +181,9 @@ export default function WelcomeComp({navigation}) {
         renderItem={({item, index}) => (
           <AddressItemComp
             ListItem={item}
-            onButtonPress={(item) => selectAddress(item)}
+            onButtonPress={(item) => selectAddress(item, index)}
+            currIndex={index}
+            selectedIndex = {selectedAddressIndex}
           />
         )}
         keyExtractor={(item, index) => index.toString()}
@@ -196,20 +202,19 @@ export default function WelcomeComp({navigation}) {
       .collection('UserAddresses')
       .doc(auth().currentUser.email)
       .onSnapshot((querySnapShot) => {
-        console.log(querySnapShot.data())
-        setCurrAddresses(Object.values(querySnapShot.data()));
-        setAddressDelta(!addressDelta);
+        console.log(querySnapShot.data());
+        if (querySnapShot.exists) {
+          setCurrAddresses(Object.values(querySnapShot.data()));
+          setAddressDisplayDelta(!addressDisplayDelta);
+        }
       });
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.ProductContainer}>
-
         <Modal animationType="slide" visible={addressModal}>
-          <AddAddressComp 
-             onButtonPress={() => setAddressModal(false)}
-          />
+          <AddAddressComp onButtonPress={() => setAddressModal(false)} />
         </Modal>
 
         <ScrollView>
@@ -228,7 +233,6 @@ export default function WelcomeComp({navigation}) {
                 Add Address
               </Text>
             </View>
-
             {AddressesJSX}
           </View>
 
@@ -241,7 +245,7 @@ export default function WelcomeComp({navigation}) {
       </View>
       <View style={styles.AddCartContainer}>
         <TouchableOpacity style={styles.buttonContainer} onPress={() => {}}>
-          <Text style={styles.buttonContainerText}>Add to Cart</Text>
+              <Text style={styles.buttonContainerText}>Rent Now. Pay Rs.{transportAmt}</Text>
         </TouchableOpacity>
       </View>
 

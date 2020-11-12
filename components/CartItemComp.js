@@ -24,7 +24,7 @@ export default function IngredientListItemComp(props) {
   }, []);
 
   useEffect(() => {
-    console.log(props.ListItem.noOfUnits);
+    
     timerDisplay(props.ListItem.active);
   }, [countDown]);
 
@@ -39,11 +39,12 @@ export default function IngredientListItemComp(props) {
 
   function timerDisplay(active) {
     if (active) {
+      console.log(countDown);
       setTimerJSX(
         <CountDown
           until={countDown}
           onFinish={() => props.timerOver()}
-          onPress={() => setTimer()}
+          onPress={() => {setTimer()}}
           timeLabels={{m: null, s: null}}
           timeToShow={['M', 'S']}
           size={10}
